@@ -23,7 +23,7 @@ def keep_alive():
     import time, urllib.request
     while True:
         try:
-            urllib.request.urlopen("https://TU-RIESGOS-APP.onrender.com/")
+            urllib.request.urlopen("https://riesgos-v6uu.onrender.com/")
         except:
             pass
         time.sleep(840)
@@ -70,7 +70,7 @@ async def generate_riesgos(request: Request):
         "expires": datetime.utcnow() + timedelta(hours=SESSION_TTL_HOURS),
     }
 
-    BASE_URL = "https://TU-RIESGOS-APP.onrender.com"
+    BASE_URL = "https://riesgos-v6uu.onrender.com"
     view_url = f"{BASE_URL}/view/{session_id}"
     return JSONResponse({"success": True, "view_url": view_url, "message": f"Mapa listo: {view_url}"})
 
