@@ -530,7 +530,7 @@ function buildNetwork(){{
   svgEl.setAttribute('width',W); svgEl.setAttribute('height',H);
   const svg=d3.select('#network-svg'); svg.selectAll('*').remove();
 
-  const nodes=riesgos.map(r=>({...r,
+  const nodes=riesgos.map(r=>({{...r,
     id:r.codigo, connections:(r.interrelaciones||[]).length,
     intensity:r.probabilidad*r.impacto
   }));
